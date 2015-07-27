@@ -1,0 +1,13 @@
+#!/bin/bash
+
+tardir=(/root /var /home /srv /media)
+backdir=/mnt/sda3/temp
+len=${#tardir[*]}
+j=0
+#foreach the each value
+while [ $j -lt $len ]
+   do
+tar -cf  $backdir${tardir[$j]} ${tardir[$j]}
+
+    j=$(($j+1))
+done
